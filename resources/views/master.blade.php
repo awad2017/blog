@@ -16,7 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="{{ url('laravelpost/css/blog-home.css') }}" rel="stylesheet">
-    <link href="{{ url('laravelpost/css/blog-home.css') }}" rel="stylesheet">
+    <link href="{{ url('laravelpost/css/frontend.css') }}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="{{ url('/posts') }}">Home</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use DB;
-class PagerController extends Controller
+class PagesController extends Controller
 {
     public function posts() {
         $posts = Post::all();
         return view('content.posts', compact('posts'));
     }
-    public function post($id) {
-        $post = DB::table('posts')->find($id);
+    public function post(Post $post) {
+       // $post = DB::table('posts')->find($id);
         return view('content.post', compact('post'));
     }
     public function store(Request $request) {

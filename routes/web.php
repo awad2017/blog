@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/posts', 'PagerController@posts');
-Route::get('/posts/{id}', 'PagerController@post');
-Route::post('/posts/store', 'PagerController@store');
+Route::get('/posts', 'PagesController@posts');
+Route::get('/posts/{post}', 'PagesController@post');
+Route::post('/posts/store', 'PagesController@store');
+Route::post('/posts/{post}/store', 'CommentsController@store');

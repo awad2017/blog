@@ -11,14 +11,35 @@
             <a href="#">{{ $post->title }}</a>
         </h2>
         <p class="lead">
-            by <a href="index.php">Start Bootstrap</a>
+            by <a href="#">Start Bootstrap</a>
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
         <hr>
 
         <hr>
         <p>{{ $post->body }}</p>
-        <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+       <br>
+    <div class="comments">
+        @foreach($post->comments as $comment)
+          <p class="comment">{{ $comment->body }}</p>
+
+         @endforeach
+    </div>
+      <br>
+
+    <form method="post" action="/posts/{{ $post->id }}/store">
+        {{ csrf_field() }}
+
+        <div class="form-group">
+            <label for="body">Write Something ......</label>
+            <textarea name="body" id="body" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-submit">Add Comment</button>
+        </div>
+
+    </form>
 
         <hr>
 
